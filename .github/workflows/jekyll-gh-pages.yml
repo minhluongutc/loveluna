@@ -28,7 +28,7 @@ jobs:
         run: npm run build -- --configuration production
 
       - name: 🚀 Deploy to GitHub Pages
-        uses: minhluongutc
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: master  # branch sẽ được dùng để host GitHub Pages
           folder: dist/loveluna  # đường dẫn thư mục build (sửa lại cho đúng)
