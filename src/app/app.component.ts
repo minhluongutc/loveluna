@@ -20,7 +20,7 @@ export class AppComponent implements OnInit {
   boyName = 'Nguyễn Minh Lượng';
   girlName = 'Nguyễn Thanh Nga';
 
-  days = 0;
+  days = 0 ;
   years = 0;
   months = 0;
   prettySince = '';
