@@ -1,0 +1,158 @@
+$pink1: #fff0f6;
+$pink2: #ffe6f0;
+$pink3: #ffb6c9;
+$pink4: #ff6fae;
+$accent: #ff2d8a;
+$text: #55273a;
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: linear-gradient(180deg, $pink1, $pink2);
+}
+
+.love-app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+  padding: 20px;
+  min-height: 100vh;
+  color: $text;
+}
+
+/* HEADER */
+.header {
+  margin-top: 10px;
+}
+.header h1 {
+  font-size: 26px;
+  color: $accent;
+  margin: 8px 0;
+}
+.subtitle {
+  font-size: 14px;
+  color: #7b4d63;
+}
+
+/* CARD */
+.card {
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 20px;
+  padding: 20px 14px;
+  margin-top: 24px;
+  box-shadow: 0 6px 20px rgba(255, 100, 160, 0.15);
+  width: 100%;
+  max-width: 380px;
+  backdrop-filter: blur(8px);
+}
+
+/* COUPLE */
+.couple {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 16px;
+}
+
+.person {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.avatar {
+  font-size: 50px;
+  margin-bottom: 4px;
+}
+.name {
+  font-weight: 600;
+  font-size: 15px;
+  color: $text;
+}
+
+/* HEART */
+.heart-container {
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+
+.heart {
+  width: 60px;
+  height: 60px;
+  background: $accent;
+  transform: rotate(-45deg);
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(255, 77, 166, 0.5);
+}
+
+.heart::before,
+.heart::after {
+  content: "";
+  width: 60px;
+  height: 60px;
+  background: $accent;
+  border-radius: 50%;
+  position: absolute;
+}
+.heart::before {
+  top: -30px;
+  left: 0;
+}
+.heart::after {
+  left: 30px;
+  top: 0;
+}
+
+.beating {
+  animation: beat 1.3s infinite ease-in-out;
+}
+
+@keyframes beat {
+  0%, 100% { transform: scale(1) rotate(-45deg); }
+  50% { transform: scale(1.2) rotate(-45deg); }
+}
+
+/* COUNT */
+.count .days {
+  font-size: 42px;
+  font-weight: 700;
+  color: $accent;
+  margin: 10px 0 6px;
+}
+.count .days span {
+  font-size: 16px;
+  color: #7b4d63;
+  margin-left: 4px;
+}
+.duration {
+  font-size: 14px;
+  color: #7b4d63;
+  margin-bottom: 6px;
+}
+.since {
+  font-size: 13px;
+  color: #9a607a;
+}
+
+/* FOOTER */
+.footer {
+  margin-top: 28px;
+  font-size: 13px;
+  color: #7a3f5a;
+}
+
+/* MOBILE OPTIMIZATION */
+@media (max-width: 480px) {
+  .header h1 { font-size: 22px; }
+  .card { padding: 16px 12px; border-radius: 16px; }
+  .heart-container { width: 60px; height: 60px; }
+  .heart { width: 45px; height: 45px; top: 8px; left: 8px; }
+  .heart::before, .heart::after { width: 45px; height: 45px; top: -22px; left: 0; }
+  .heart::after { left: 22px; top: 0; }
+}
