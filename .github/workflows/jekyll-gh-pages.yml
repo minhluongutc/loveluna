@@ -30,5 +30,5 @@ jobs:
       - name: 🚀 Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          branch: master  # branch sẽ được dùng để host GitHub Pages
+          branch: gh-pages  # branch sẽ được dùng để host GitHub Pages
           folder: dist/loveluna  # đường dẫn thư mục build (sửa lại cho đúng)
