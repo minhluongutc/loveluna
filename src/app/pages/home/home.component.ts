@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {DecimalPipe, NgIf} from "@angular/common";
+import {DecimalPipe, NgIf, NgOptimizedImage} from "@angular/common";
 import {NzButtonComponent} from "ng-zorro-antd/button";
 import {NzIconDirective} from "ng-zorro-antd/icon";
 import {NzWaveDirective} from "ng-zorro-antd/core/wave";
@@ -8,14 +8,11 @@ import {RouterLink} from "@angular/router";
 @Component({
   selector: 'app-home',
   standalone: true,
-    imports: [
-        DecimalPipe,
-        NgIf,
-        NzButtonComponent,
-        NzIconDirective,
-        NzWaveDirective,
-        RouterLink
-    ],
+  imports: [
+    DecimalPipe,
+    NgIf,
+    NgOptimizedImage
+  ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
