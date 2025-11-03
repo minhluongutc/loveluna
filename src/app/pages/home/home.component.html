@@ -1,0 +1,51 @@
+<div class="love-app">
+  <header class="header">
+    <h1>{{ title }}</h1>
+    <p class="subtitle">Tình yêu của {{ boyName }} 💕 {{ girlName }}</p>
+  </header>
+
+  <main class="card">
+    <div class="couple">
+<!--      <div class="person boy">-->
+<!--        <div class="avatar">👦</div>-->
+<!--        <div class="name">{{ boyName }}</div>-->
+<!--      </div>-->
+      <div class="love-avatar">
+        <img class="love-avatar__img" src="../../../assets/img/anhluong.png" alt="Avatar của người ấy">
+        <div class="love-avatar__badge">Anh Lượng</div>
+      </div>
+
+      <div class="heart-container">
+        <div class="heart beating"></div>
+      </div>
+
+<!--      <div class="person girl">-->
+<!--        <div class="avatar">👧</div>-->
+<!--        <div class="name">{{ girlName }}</div>-->
+<!--      </div>-->
+      <div class="love-avatar">
+        <img class="love-avatar__img" src="../../../assets/img/ngathoi_noBG.png" alt="Avatar của người ấy">
+        <div class="love-avatar__badge">NGA THỐI</div>
+      </div>
+    </div>
+
+    <div class="count">
+      <div class="days">{{ totalDays | number }} <span>ngày yêu</span></div>
+      <div class="duration" *ngIf="years > 0 || months > 0">
+        ({{ durationString }})
+      </div>
+      <div class="since">Bắt đầu từ {{ prettySince }}</div>
+<!--      <button nz-button nzType="primary" [nzSize]="'large'" nzShape="round" routerLink="/calendar">-->
+<!--        <span nz-icon nzType="calendar"></span>-->
+<!--        Đi xem lịch nào-->
+<!--      </button>-->
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <p>💗 Chúc tình yêu của {{ boyName.split(' ').pop() }} & {{ girlName.split(' ').pop() }} mãi bền lâu 💗</p>
+  </footer>
+</div>
+<!-- HTML mẫu -->
+

@@ -1,0 +1,52 @@
+<full-calendar #calendar [options]='calendarOptions' [events]="listEvent">
+  <!--  <ng-template #eventContent let-arg>-->
+  <!--    <b>{{ arg.timeText }}</b>-->
+  <!--    <i>{{ arg.event.title }}</i>-->
+  <!--  </ng-template>-->
+</full-calendar>
+<nz-drawer
+  [nzClosable]="false"
+  [nzVisible]="visibleModel"
+  nzPlacement="bottom"
+  (nzOnClose)="closeModel()"
+>
+  <ng-container *nzDrawerContent>
+    <div class="calendar-model">
+      <div class="header-model">
+        <button nz-button nzType="link" (click)="closeModel()">Hủy</button>
+        <h3>Thêm mới</h3>
+        <button nz-button nzType="link">Lưu</button>
+      </div>
+
+      <div class="body-model">
+        <div nz-row class="form-input">
+          <div class="input-wrapper input-wrapper-border" nz-col nzSpan="24">
+            <input name="l" class="input-top" nz-input placeholder="Title" type="text"/>
+          </div>
+          <div class="input-wrapper" nz-col nzSpan="24">
+            <input name="m" class="border-top-none input-bottom" nz-input placeholder="Description" type="text"/>
+          </div>
+        </div>
+        <div nz-row class="form-input">
+          <div class="input-wrapper input-wrapper-border" nz-col nzSpan="24">
+            <nz-input-group class="input-top" nzAddOnBefore="Cả ngày" [nzAddOnAfter]="addOnAfterTemplate">
+              <ng-template #addOnAfterTemplate>
+                <nz-switch [(ngModel)]="switchValue"></nz-switch>
+              </ng-template>
+            </nz-input-group>
+          </div>
+          <div class="input-wrapper input-wrapper-border" nz-col nzSpan="24">
+            <nz-input-group nzAddOnBefore="Bắt đầu" [nzAddOnAfter]="addOnAfterTemplate">
+              <ng-template #addOnAfterTemplate>
+                <nz-switch [(ngModel)]="switchValue"></nz-switch>
+              </ng-template>
+            </nz-input-group>
+          </div>
+          <div class="input-wrapper" nz-col nzSpan="24">
+            <input name="m" class="border-top-none input-bottom" nz-input placeholder="Description" type="text"/>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+</nz-drawer>

@@ -1,0 +1,322 @@
+//$pink1: #fff0f6;
+//$pink2: #ffe6f0;
+//$pink3: #ffb6c9;
+//$pink4: #ff6fae;
+//$accent: #ff2d8a;
+//$text: #55273a;
+@import "../../../styles";
+
+
+.love-app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+  padding: 20px;
+  min-height: 100vh;
+  color: $text;
+}
+
+/* HEADER */
+.header {
+  margin-top: 10px;
+}
+
+.header h1 {
+  font-size: 26px;
+  color: $accent;
+  margin: 8px 0;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: #7b4d63;
+}
+
+/* CARD */
+.card {
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 20px;
+  padding: 20px 14px;
+  margin-top: 24px;
+  box-shadow: 0 6px 20px rgba(255, 100, 160, 0.15);
+  width: 100%;
+  max-width: 380px;
+  backdrop-filter: blur(8px);
+}
+
+/* COUPLE */
+.couple {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 16px;
+}
+
+.person {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.avatar {
+  font-size: 50px;
+  margin-bottom: 4px;
+}
+
+.name {
+  font-weight: 600;
+  font-size: 15px;
+  color: $text;
+}
+
+/* HEART */
+.heart-container {
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+
+.heart {
+  width: 60px;
+  height: 60px;
+  background: $accent;
+  transform: rotate(-45deg);
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(255, 77, 166, 0.5);
+}
+
+.heart::before,
+.heart::after {
+  content: "";
+  width: 60px;
+  height: 60px;
+  background: $accent;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.heart::before {
+  top: -30px;
+  left: 0;
+}
+
+.heart::after {
+  left: 30px;
+  top: 0;
+}
+
+.beating {
+  animation: beat 1.3s infinite ease-in-out;
+}
+
+@keyframes beat {
+  0%, 100% {
+    transform: scale(1) rotate(-45deg);
+  }
+  50% {
+    transform: scale(1.2) rotate(-45deg);
+  }
+}
+
+/* COUNT */
+.count .days {
+  font-size: 42px;
+  font-weight: 700;
+  color: $accent;
+  margin: 10px 0 6px;
+}
+
+.count .days span {
+  font-size: 16px;
+  color: #7b4d63;
+  margin-left: 4px;
+}
+
+.duration {
+  font-size: 14px;
+  color: #7b4d63;
+  margin-bottom: 6px;
+}
+
+.since {
+  font-size: 13px;
+  color: #9a607a;
+}
+
+/* FOOTER */
+.footer {
+  margin-top: 28px;
+  font-size: 13px;
+  color: #7a3f5a;
+}
+
+/* MOBILE OPTIMIZATION */
+@media (max-width: 480px) {
+  .header h1 {
+    font-size: 22px;
+  }
+  .card {
+    padding: 16px 12px;
+    border-radius: 16px;
+  }
+  .heart-container {
+    width: 60px;
+    height: 60px;
+  }
+  .heart {
+    width: 45px;
+    height: 45px;
+    top: 8px;
+    left: 8px;
+  }
+  .heart::before, .heart::after {
+    width: 45px;
+    height: 45px;
+    top: -22px;
+    left: 0;
+  }
+  .heart::after {
+    left: 22px;
+    top: 0;
+  }
+}
+
+
+//
+
+/* CSS: cute, light-pink avatar */
+//:root {
+  $pink-1: #fff1f6; /* very light bg */
+  $pink-2: #ffd7ea; /* soft pink */
+  $pink-3: #ff9ccf; /* accent */
+  $white: #ffffff;
+  $shadow: 0 8px 20px rgba(255, 122, 190, 0.18);
+  $soft-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+//}
+
+/* Container chính */
+.love-avatar {
+  $size: 128px; /* thay đổi dễ dàng */
+  width: $size;
+  height: $size;
+  position: relative;
+  border-radius: 999px; /* circle */
+  padding: 6px; /* khoảng cách viền */
+  background: linear-gradient(135deg, $pink-1 0%, $pink-2 60%);
+  box-shadow: 0 8px 20px rgba(255, 122, 190, 0.18), 0 4px 12px rgba(0, 0, 0, 0.06);
+  display: inline-block;
+  overflow: visible;
+  transform: translateZ(0); /* tạo layer riêng cho smoother animation */
+}
+
+/* Bóng nền nhỏ phía sau tạo cảm giác "card" */
+.love-avatar::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  box-shadow: inset 0 -6px 18px rgba(255, 156, 194, 0.06);
+}
+
+/* Trái tim động (top-right) */
+.love-avatar::after {
+  content: "❤";
+  position: absolute;
+  right: -6px;
+  top: -8px;
+  font-size: 18px;
+  line-height: 1;
+  transform-origin: center;
+  color: $pink-3;
+  text-shadow: 0 2px 6px rgba(255, 156, 194, 0.45);
+  animation: float-heart 2.8s ease-in-out infinite;
+  filter: drop-shadow(0 6px 10px rgba(255, 122, 190, 0.12));
+}
+
+/* Ảnh chính */
+.love-avatar__img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  border-radius: 999px;
+  border: 4px solid $white; /* tạo viền trắng */
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  transition: transform 220ms cubic-bezier(.2, .9, .3, 1), box-shadow 220ms;
+}
+
+/* Hover effect (desktop) */
+.love-avatar:hover .love-avatar__img {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 18px 36px rgba(255, 122, 190, 0.12);
+}
+
+/* Badge hiển thị số ngày */
+.love-avatar__badge {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -12px;
+  background: linear-gradient(90deg, $pink-3, #ff6aa8);
+  color: $white;
+  padding: 6px 10px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 13px;
+  box-shadow: 0 6px 18px rgba(255, 122, 190, 0.12);
+  border: 2px solid rgba(255, 255, 255, 0.85);
+  white-space: nowrap;
+}
+
+/* Responsive: badge lên bên cạnh khi avatar nhỏ */
+@media (max-width: 360px) {
+  .love-avatar {
+    $size: 92px;
+  }
+  .love-avatar__badge {
+    bottom: 6px;
+    left: auto;
+    right: -6px;
+    transform: none;
+    font-size: 12px;
+  }
+}
+
+/* Animation trái tim */
+@keyframes float-heart {
+  0% {
+    transform: translateY(0) scale(1) rotate(-8deg);
+    opacity: 0.98;
+  }
+  25% {
+    transform: translateY(-6px) scale(1.06) rotate(2deg);
+    opacity: 1;
+  }
+  60% {
+    transform: translateY(-10px) scale(0.98) rotate(8deg);
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateY(0) scale(1) rotate(-6deg);
+    opacity: 0.98;
+  }
+}
+
+/* Accessibility: tắt animation nếu user yêu cầu reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .love-avatar::after,
+  .love-avatar__img,
+  .love-avatar:hover .love-avatar__img {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+  }
+}
+
+
