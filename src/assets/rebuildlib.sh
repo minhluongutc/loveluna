@@ -1,2 +1,1 @@
-ng build ngx-excel-db
-npm install .\dist\ngx-excel-db\ -rf
+ng build --output-path docs --base-href /loveluna/
